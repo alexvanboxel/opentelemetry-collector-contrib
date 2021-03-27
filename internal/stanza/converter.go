@@ -46,6 +46,24 @@ func Convert(obsLog *entry.Entry) pdata.Logs {
 	lr.SetSeverityText(sevText)
 	lr.SetSeverityNumber(sevNum)
 
+	if obsLog.TraceId != nil {
+		var buffer [16]byte
+		copy(buffer[0:16], obsLog.TraceId)
+		lr.SetTraceID( pdata.NewTraceID(buffer) )
+	}
+	if obsLog.SpanId != nil {
+		var buffer [8]byte
+		copy(buffer[0:8], obsLog.SpanId)
+		lr.SetSpanID( pdata.NewSpanID(buffer) )
+	}
+	if obsLog.TraceFlags != nil {
+		flags := lr.Flags()
+		flags = flags & 0xFFFFFF00
+		flags = flags | uint32(obsLog.TraceFlags[0])
+
+		lr.SetFlags( flags )
+	}
+
 	if len(obsLog.Attributes) > 0 {
 		attributes := lr.Attributes()
 		for k, v := range obsLog.Attributes {
@@ -53,7 +71,7 @@ func Convert(obsLog *entry.Entry) pdata.Logs {
 		}
 	}
 
-	insertToAttributeVal(obsLog.Record, lr.Body())
+	insertToAttributeVal(obsLog.Body, lr.Body())
 
 	ills.Logs().Append(lr)
 

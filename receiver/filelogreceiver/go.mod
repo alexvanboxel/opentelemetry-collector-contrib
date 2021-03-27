@@ -13,3 +13,4 @@ require (
 )
 
 replace github.com/open-telemetry/opentelemetry-collector-contrib/internal/stanza => ../../internal/stanza
+replace github.com/open-telemetry/opentelemetry-log-collection => ../../../opentelemetry-log-collection
