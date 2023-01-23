@@ -6,15 +6,15 @@ require (
 	contrib.go.opencensus.io/exporter/stackdriver v0.13.4
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v0.13.0
 	github.com/census-instrumentation/opencensus-proto v0.3.0
-	github.com/stretchr/testify v1.6.1
-	go.opencensus.io v0.22.5
+	github.com/stretchr/testify v1.8.1
+	go.opencensus.io v0.24.0
 	go.opentelemetry.io/collector v0.16.1-0.20201207152538-326931de8c32
 	go.opentelemetry.io/otel v0.13.0
 	go.opentelemetry.io/otel/sdk v0.13.0
 	go.uber.org/zap v1.16.0
-	google.golang.org/api v0.35.0
-	google.golang.org/genproto v0.0.0-20200904004341-0bd0a958aa1d
-	google.golang.org/grpc v1.34.0
+	google.golang.org/api v0.108.0
+	google.golang.org/genproto v0.0.0-20221227171554-f9683d7f8bef
+	google.golang.org/grpc v1.51.0
 	google.golang.org/grpc/examples v0.0.0-20200728194956-1c32b02682df // indirect
-	google.golang.org/protobuf v1.25.0
+	google.golang.org/protobuf v1.28.1
 )
