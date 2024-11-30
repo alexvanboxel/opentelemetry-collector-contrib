@@ -1,0 +1,12 @@
+type: googlecloudlogentry_encoding
+
+status:
+  class: extension
+  stability:
+    alpha: [ extension ]
+  distributions: [ ]
+  codeowners:
+    active: [ alex.vanboxel ]
+
+tests:
+  config:
